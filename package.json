@@ -1,0 +1,16 @@
+{
+  "name": "ecommerce-microservices-demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "npm --prefix services/catalog-service i && npm --prefix services/cart-service i && npm --prefix services/order-service i && npm --prefix frontend i",
+    "start:catalog": "node services/catalog-service/index.js",
+    "start:cart": "node services/cart-service/index.js",
+    "start:order": "node services/order-service/index.js",
+    "frontend": "npm --prefix frontend run dev",
+    "start:all": "concurrently \"npm:frontend\" \"npm:start:catalog\" \"npm:start:cart\" \"npm:start:order\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
