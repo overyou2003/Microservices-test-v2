@@ -16,7 +16,7 @@ export default function CartPanel({cartStatus}){
       setError(String(e))
     }finally{ setLoading(false) }
   }
-  useEffect(()=>{ if(cartStatus==='ok') load() }, [cartStatus])
+  useEffect(()=>{ if(cartStatus==='ปกติ') load() }, [cartStatus])
 
   const checkout = async () => {
     try{
@@ -31,7 +31,7 @@ export default function CartPanel({cartStatus}){
     }
   }
 
-  if(cartStatus!=='ok'){
+  if(cartStatus!=='ปกติ'){
     return (
       <div className="card">
         <div className="title">ตะกร้า</div>

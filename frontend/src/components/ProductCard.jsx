@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { FaCartArrowDown } from "react-icons/fa";
+import { RiShoppingBasket2Fill } from "react-icons/ri";
+
 
 export default function ProductCard({product, cartStatus}){
   const [qty, setQty] = useState(1)
@@ -41,11 +44,11 @@ export default function ProductCard({product, cartStatus}){
       </div>
 
       <div className="row" style={{display:'flex',gap:8,marginTop:10}}>
-        <button className="btn" onClick={addToCart} disabled={cartStatus!=='ok'}>Add to Cart</button>
-        <button className="btn ghost" onClick={buyNow}>Buy Now</button>
+        <button className="btn" onClick={addToCart} disabled={cartStatus!=='ปกติ'}><FaCartArrowDown size={20}/>เพิ่มลงตะกร้า</button>
+        <button className="btn ghost" onClick={buyNow}>ซื้อทันที</button>
       </div>
 
-      {cartStatus!=='ok' && <div className="warn" style={{marginTop:6}}>ตะกร้าล่ม — ใช้ Buy Now ได้</div>}
+      {cartStatus!=='ปกติ' && <div className="warn" style={{marginTop:6}}>ตะกร้าล่ม — ยังสามารถกด "ซื้อทันที" ได้</div>}
     </div>
   )
 }

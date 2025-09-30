@@ -40,7 +40,7 @@ function CartBody({cartStatus}){
     }finally{ setLoading(false) }
   }
 
-  useEffect(()=>{ if(cartStatus==='ok') load() }, [cartStatus])
+  useEffect(()=>{ if(cartStatus==='ปกติ') load() }, [cartStatus])
 
   // join ข้อมูลเพื่อแสดงรายละเอียด
   const detailed = useMemo(()=>{
@@ -79,7 +79,7 @@ function CartBody({cartStatus}){
     }
   }
 
-  if(cartStatus!=='ok'){
+  if(cartStatus!=='ปกติ'){
     return <p className="warn">Cart service ล่ม — ยังสั่งซื้อได้ด้วยปุ่ม <b>Buy Now</b> จากหน้าสินค้า</p>
   }
   if(loading) return <p className="muted">โหลดตะกร้า…</p>

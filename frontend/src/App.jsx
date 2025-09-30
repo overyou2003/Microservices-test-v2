@@ -8,8 +8,8 @@ const useStatus = (path) => {
   const load = async () => {
     try{
       const r = await fetch(path + '/health')
-      setSt(r.ok ? 'ok' : 'down')
-    }catch{ setSt('down') }
+      setSt(r.ok ? 'ปกติ' : 'มีปัญหา')
+    }catch{ setSt('มีปัญหา') }
   }
   useEffect(()=>{ load(); const t = setInterval(load, 4000); return ()=>clearInterval(t) }, [path])
   return st
@@ -26,9 +26,9 @@ export default function App(){
       <header>
         <div className="brand">DREAMSHOP | <span style={{color:'yellow'}}>MICROSERVICES</span></div>
         <div className="actions">
-          <span className="pill">Catalog: <b className={catalogStatus==='ok'?'ok':'bad'}>{catalogStatus}</b></span>
-          <span className="pill">Cart: <b className={cartStatus==='ok'?'ok':'bad'}>{cartStatus}</b></span>
-          <span className="pill">Order: <b className={orderStatus==='ok'?'ok':'bad'}>{orderStatus}</b></span>
+          <span className="pill">ระบบรายการสินค้า: <b className={catalogStatus==='ปกติ'?'ok':'bad'}>{catalogStatus}</b></span>
+          <span className="pill">ระบบตะกร้าสินค้า: <b className={cartStatus==='ปกติ'?'ok':'bad'}>{cartStatus}</b></span>
+          <span className="pill">ระบบคำสั่งซื้อ: <b className={orderStatus==='ปกติ'?'ok':'bad'}>{orderStatus}</b></span>
           <button className="btn" onClick={()=>setOpenCart(true)}><FaCartShopping size={20}/>เปิดตะกร้า</button>
         </div>
       </header>
