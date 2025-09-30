@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-
+import toast, { Toaster } from 'react-hot-toast'
 const formatBaht = (n) => (n || 0).toLocaleString('th-TH')
 
 export default function CartModal({open, onClose, cartStatus}){
@@ -71,7 +71,8 @@ function CartBody({cartStatus}){
       })
       const j = await r.json()
       if(!r.ok) throw new Error(j.error || 'order failed')
-      alert(`ชำระสำเร็จ เลขออเดอร์: ${j.id} (รวม ${formatBaht(j.amount)} บาท)`)
+      toast.success('ชำระเงินสำเร็จ ราคารวมทั้งสิ้น ' + j.amount +' บาท');
+      //alert(`ชำระสำเร็จ เลขออเดอร์: ${j.id} (รวม ${formatBaht(j.amount)} บาท)`)
       await fetch('/api/cart/cart/clear', { method:'DELETE' }).catch(()=>{})
       load()
     }catch(e){

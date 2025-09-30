@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ProductCard from './components/ProductCard.jsx'
 import CartModal from './components/CartModal.jsx'
 import { FaCartShopping } from "react-icons/fa6";
+import { Toaster } from 'react-hot-toast'
 
 const useStatus = (path) => {
   const [st, setSt] = useState('checking')
@@ -39,9 +40,10 @@ export default function App(){
           <ProductGrid cartStatus={cartStatus}/>
         </div>
       </main>
-
+      <Toaster position="top-right" />
       <CartModal open={openCart} onClose={()=>setOpenCart(false)} cartStatus={cartStatus}/>
     </div>
+    
   )
 }
 

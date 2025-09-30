@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaCartArrowDown } from "react-icons/fa";
 import { RiShoppingBasket2Fill } from "react-icons/ri";
-
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function ProductCard({product, cartStatus}){
   const [qty, setQty] = useState(1)
@@ -14,7 +14,7 @@ export default function ProductCard({product, cartStatus}){
         body: JSON.stringify({productId: product.id, qty: Number(qty)||1})
       })
       if(!r.ok) throw new Error('cart error')
-      alert('เพิ่มลงตะกร้าแล้ว')
+      toast.success('เพิ่มลงตะกร้าแล้ว')
     }catch(e){ alert('เพิ่มตะกร้าไม่ได้ (Cart ล่ม)') }
   }
 
@@ -28,7 +28,8 @@ export default function ProductCard({product, cartStatus}){
       })
       const j = await r.json()
       if(!r.ok) throw new Error(j.error||'order failed')
-      alert(`สั่งซื้อสำเร็จ เลขออเดอร์: ${j.id} ยอดรวม ${j.amount} บาท`)
+      toast.success('สั่งซื้อสำเร็จ ราคารวมทั้งหมด '+ j.amount +' บาท');
+      //alert(`สั่งซื้อสำเร็จ เลขออเดอร์: ${j.id} ยอดรวม ${j.amount} บาท`)
     }catch(e){ alert('สั่งซื้อไม่ได้ (Order service ล่ม)') }
   }
 

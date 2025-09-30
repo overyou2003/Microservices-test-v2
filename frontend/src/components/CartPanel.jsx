@@ -1,5 +1,6 @@
 
 import React, { useEffect, useMemo, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function CartPanel({cartStatus}){
   const [items, setItems] = useState([])
@@ -23,7 +24,8 @@ export default function CartPanel({cartStatus}){
       const r = await fetch('/api/order/order', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({items, source:'cart'}) })
       const j = await r.json()
       if(!r.ok) throw new Error(j.error||'order failed')
-      alert('ชำระสำเร็จ เลขออเดอร์: '+ j.id + ' ('+ j.amount +' บาท)'); 
+      toast.success('ชำระเงินสำเร็จ ราคารวมทั้งสิ้น ' + ' ('+ j.amount +' บาท)');
+      //alert('ปปป เลขออเดอร์: '+ j.id + ' ('+ j.amount +' บาท)'); 
       await fetch('/api/cart/cart/clear', { method:'DELETE' }).catch(()=>{})
       load()
     }catch(e){
