@@ -15,7 +15,7 @@ body{
 header{
   position:sticky; top:0; z-index:20;
   display:flex; align-items:center; justify-content:space-between;
-  padding:14px 20px; background:rgba(16,24,49,.8); backdrop-filter: blur(8px);
+  padding:30px 40px; background:rgba(16,24,49,.8); backdrop-filter: blur(8px);
   border-bottom:1px solid var(--soft)
 }
 .brand{font-weight:800; letter-spacing:.3px ; font-size: 25px;}
@@ -26,7 +26,7 @@ header .actions{display:flex; gap:.5rem; align-items:center}
 .ok{color:var(--ok)} .bad{color:var(--bad)} .warn{color:var(--warn)}
 .btn{
   cursor:pointer; border:none; border-radius:12px; background:var(--accent); color:var(--text);
-  padding:.55rem .9rem; box-shadow:var(--shadow)
+  padding:.55rem .9rem; box-shadow:var(--shadow) ; display: flex; align-items:center; gap:.4rem;
 }
 .btn:hover{filter:brightness(1.08)}
 .btn.ghost{background:transparent; border:1px solid var(--soft); box-shadow:none}

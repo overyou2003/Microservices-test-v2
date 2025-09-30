@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from './components/ProductCard.jsx'
 import CartModal from './components/CartModal.jsx'
+import { FaCartShopping } from "react-icons/fa6";
 
 const useStatus = (path) => {
   const [st, setSt] = useState('checking')
@@ -23,12 +24,12 @@ export default function App(){
   return (
     <div>
       <header>
-        <div className="brand">DreamShop</div>
+        <div className="brand">DREAMSHOP | <span style={{color:'yellow'}}>MICROSERVICES</span></div>
         <div className="actions">
           <span className="pill">Catalog: <b className={catalogStatus==='ok'?'ok':'bad'}>{catalogStatus}</b></span>
           <span className="pill">Cart: <b className={cartStatus==='ok'?'ok':'bad'}>{cartStatus}</b></span>
           <span className="pill">Order: <b className={orderStatus==='ok'?'ok':'bad'}>{orderStatus}</b></span>
-          <button className="btn" onClick={()=>setOpenCart(true)}>เปิดตะกร้า</button>
+          <button className="btn" onClick={()=>setOpenCart(true)}><FaCartShopping size={20}/>เปิดตะกร้า</button>
         </div>
       </header>
 
