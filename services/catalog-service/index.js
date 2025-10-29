@@ -36,7 +36,7 @@ app.post('/crash', (req,res)=>{
 const PRODUCTS = [
   { id: 'p1', name: 'Nike ir Forces 1', price: 3000, stock: 10,
     img: 'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-  { id: 'p2', name: 'Nike Sports Shoe', price: 2500, stock: 120,
+  { id: 'p2', name: 'Nke Sports Shoe', price: 2500, stock: 120,
     img: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   { id: 'p3', name: 'Adidas Jersey Shirt', price: 950, stock: 34,
     img: 'https://images.unsplash.com/photo-1511746315387-c4a76990fdce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
