@@ -38,7 +38,7 @@ const PRODUCTS = [
     img: 'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   { id: 'p2', name: 'Nke Sports Shoes', price: 2500, stock: 120,
     img: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-  { id: 'p3', name: 'Adidas Jersey Shirt', price: 950, stock: 34,
+  { id: 'p3', name: 'Adidas Jerseys Shirt', price: 950, stock: 34,
     img: 'https://images.unsplash.com/photo-1511746315387-c4a76990fdce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   { id: 'p4', name: 'Adidas Superstar', price: 20, stock: 50,
     img: 'https://images.unsplash.com/photo-1593287073863-c992914cb3e3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
